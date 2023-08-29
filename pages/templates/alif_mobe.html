@@ -1,0 +1,23 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Members</h1>
+  
+<ul>
+  {% for x in mymembers %}
+    <li>{{ x.firstname }} {{ x.lastname }}</li>
+  {% endfor %}
+</ul>
+
+<form action="/pages/" method="post" >
+{ % csrf_token %}
+{{- fors}}
+<input type="submit">
+
+</form>
+
+
+</body>
+</html>
