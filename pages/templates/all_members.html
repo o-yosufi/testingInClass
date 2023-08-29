@@ -1,0 +1,61 @@
+{% extends "master.html" %}
+
+{% load static %}
+{% block title %}
+  My Tennis Club - List of all members
+{% endblock %}
+
+
+{% block content %}
+
+  <p><a href="/">HOME</a></p>
+
+  <h1>Members</h1>
+  
+
+
+    <h1 style="color: rgb(0, 0, 0);">This form is for applicants who wants to join Python Class</h1>
+    <form action="action_php.page" method="post">
+        <img src="111.jpg" alt="" style="width: 350px;float: right;">
+    <div>
+        <label for="Fname;">First Name:</label> <br>
+        <input type="text" name="frist Name:" id="Fname" placeholder="ahmad"> <br>
+    </div>
+
+    <div>
+        <label for="lname;">Last Name:</label><br>
+        <input type="text" name="lastName:" id="Fname" placeholder="Mahmud"> <br>
+    <div>
+    
+<br>
+    <div>
+        <label for="bdate">Date of brith</label> <br>
+        <input type="date"><br>
+    </div>
+<br>
+        <div>
+
+            <label for="email">Email Address: </label><br>
+            <input type="email" placeholder="ahamd123@gmil.com"><br>
+        </div>
+
+ <br>
+ <label for="phonemunber"> Phone munber:</label> <br>
+ <input type="phonemunber">
+
+        </div>
+            <input type="reset">
+        </div>
+
+<br>
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+
+  <ul>
+    {% for x in mymembers %}
+      <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
